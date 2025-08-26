@@ -12,6 +12,12 @@ name = "dbus-secret-service-keyring-store"
 version = "0.1.0"
 edition = "2024"
 
+[features]
+default = ["crypto-rust"]
+crypto-rust = ["dbus-secret-service/crypto-rust"]
+crypto-openssl = ["dbus-secret-service/crypto-openssl"]
+vendored = ["dbus-secret-service/vendored"]
+
 [[example]]
 name = "example"
 
