@@ -28,7 +28,7 @@ fn main() {
         panic!("Passwords do not match");
     }
     println!("Entry with a custom target: {:?}", entry2);
-    // service and user of entry1 are the same as entry2, and it has no target attribute
+    // service and user of entry1 are the same as entry2, but it has no target attribute
     assert!(matches!(
         entry1.get_password().unwrap_err(),
         Error::Ambiguous(_)
@@ -42,5 +42,6 @@ fn main() {
         .unwrap();
     // now entry1 is not ambiguous
     entry1.delete_credential().unwrap();
+
     keyring_core::unset_default_store();
 }
