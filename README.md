@@ -1,4 +1,4 @@
-# Apple-native Keyring Store
+# dbus Secret Service keyring store
 
 This is a [keyring credential store provider](https://github.com/open-source-cooperative/keyring-rs/wiki/Keyring) that stores credentials in Secret Service. It’s compatible with [keyring-core](https://crates.io/crates/keyring-core) v0.5 and later.
 
