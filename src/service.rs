@@ -7,6 +7,9 @@ to the Secret Service. Each store holds the singleton used by its creds.
 
 */
 
+#[cfg(not(any(feature = "crypto-rust", feature = "crypto-openssl")))]
+compile_error!("You must enable one of the features crypto-rust or crypto-openssl");
+
 use std::collections::HashMap;
 use std::sync::Mutex;
 

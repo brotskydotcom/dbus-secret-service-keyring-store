@@ -54,11 +54,12 @@ the same service and user.
 
 This crate has no features of its own: all of its features are simply passed on
 to the [dbus-secret-service crate](https://crates.io/crates/dbus-secret-service)
-that it uses to communicate with Secret Service. (See the [docs for that
-crate](https://docs.rs/docs/dbus-secret-service) for details.) You must enable
-either the `crypto-rust` or the `crypto-openssl` feature because this crate
-always encrypts communication with the Secret Service; the default specified by
-this crate is `crypto-rust`.
+that it uses to communicate with Secret Service.
+(See the [docs for that crate](https://docs.rs/docs/dbus-secret-service) for details.)
+You must enable either the `crypto-rust` or the `crypto-openssl` feature because this
+crate always encrypts communication with the Secret Service. You can additionally
+enable the `vendored` feature if you want the required C libraries
+(dbus and, if specified, openssl) statically linked with your application.
 
 ## Headless usage
 

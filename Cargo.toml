@@ -9,11 +9,10 @@ rust-version = "1.85"
 exclude = [".github/"]
 readme = "README.md"
 name = "dbus-secret-service-keyring-store"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2024"
 
 [features]
-default = ["crypto-rust"]
 crypto-rust = ["dbus-secret-service/crypto-rust"]
 crypto-openssl = ["dbus-secret-service/crypto-openssl"]
 vendored = ["dbus-secret-service/vendored"]
@@ -29,4 +28,5 @@ keyring-core = "0.5"
 fastrand = "2.3.0"
 
 [package.metadata.docs.rs]
+features = ["crypto-rust"]
 targets = ["x86_64-unknown-linux-gnu"]
