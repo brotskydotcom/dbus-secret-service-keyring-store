@@ -33,7 +33,7 @@ jobs:
         run: cargo fmt --check
 
       - name: Clippy check
-        run: cargo clippy --no-deps --all-targets -- -D warnings
+        run: cargo clippy --features=${{ matrix.features }} --no-deps --all-targets -- -D warnings
 
       - name: Install gnome-keyring
         run: sudo apt-get install -y gnome-keyring
@@ -45,13 +45,21 @@ jobs:
         run: gnome-keyring-daemon --components=secrets --daemonize --unlock <<< 'foobar'
 
       - name: Build and Test
-        run: cargo test --no-default-features --features=${{ matrix.features }} --verbose
+        run: cargo test --features=${{ matrix.features }} --verbose
 
       - name: Build examples
-        run: cargo build --examples --verbose
+        run: cargo build --features=${{ matrix.features }} --examples --verbose
 
   ci_msrv:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        features:
+          - "crypto-rust"
+          - "crypto-openssl"
+          - "crypto-rust,vendored"
+          - "crypto-openssl,vendored"
 
     steps:
       - name: install required packages
@@ -69,4 +77,4 @@ jobs:
           components: clippy
 
       - name: Clippy check
-        run: cargo clippy --no-deps --all-targets -- -D warnings
+        run: cargo clippy --features=${{ matrix.features }} --no-deps --all-targets -- -D warnings
