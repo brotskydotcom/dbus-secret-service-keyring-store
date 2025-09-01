@@ -22,7 +22,7 @@ name = "example"
 
 [dependencies]
 dbus-secret-service = { version = "4.1" }
-keyring-core = {  version = "0.6", path = "../keyring-core" }
+keyring-core = {  version = "0.6" }
 
 [dev-dependencies]
 fastrand = "2.3.0"
