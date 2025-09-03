@@ -2,7 +2,7 @@
 
 [![build](https://github.com/open-source-cooperative/dbus-secret-service-keyring-store/actions/workflows/ci.yaml/badge.svg)](https://github.com/open-source-cooperative/dbus-secret-service-keyring-store/actions) [![crates.io](https://img.shields.io/crates/v/dbus-secret-service-keyring-store.svg?style=flat-square)](https://crates.io/crates/dbus-secret-service-keyring-store) [![docs.rs](https://docs.rs/dbus-secret-service-keyring-store/badge.svg)](https://docs.rs/dbus-secret-service-keyring-store)
 
-This is a [keyring credential store provider](https://github.com/open-source-cooperative/keyring-rs/wiki/Keyring) that stores credentials in Secret Service. It’s compatible with [keyring-core](https://crates.io/crates/keyring-core) v0.5 and later.
+This is a [keyring credential store provider](https://github.com/open-source-cooperative/keyring-rs/wiki/Keyring) that stores credentials in Secret Service. It’s compatible with [keyring-core](https://crates.io/crates/keyring-core) v0.6 and later.
 
 ## Usage
 
@@ -11,6 +11,10 @@ To use this credential store provider, you must take a dependency on the [keyrin
 ## Features
 
 This crate has no features of its own: all of its features are simply passed on to the [dbus-secret-service crate](https://crates.io/crates/dbus-secret-service) that it uses to communicate with Secret Service. (See the [docs for that crate](https://docs.rs/docs/dbus-secret-service) for details.) You must enable either the `crypto-rust` or the `crypto-openssl` feature because this crate always encrypts communication with the Secret Service. You can additionally enable the `vendored` feature if you want the required C libraries (dbus and, if specified, openssl) statically linked with your application.
+
+## Changelog
+
+See the [release history on GitHub](https://github.com/open-source-cooperative/dbus-secret-service-keyring-store/releases) for full details.
 
 ## License
 
