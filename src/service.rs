@@ -72,7 +72,7 @@ impl Service {
                 attributes,
                 secret,
                 true, // replace
-                "text/plain",
+                "application/octet-stream",
             )
             .map_err(platform_failure)?;
         Ok(())
